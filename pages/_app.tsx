@@ -1,23 +1,23 @@
-import * as React from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
-import { ThemeProvider } from '@mui/material/styles';
-import { CacheProvider, EmotionCache } from '@emotion/react';
-import type { AppProps } from 'next/app';
-import Head from 'next/head';
-import theme from '../src/Theme/theme';
-import { createEmotionCache } from '../src/Theme/createEmotionCache';
+import * as React from 'react'
+import CssBaseline from '@mui/material/CssBaseline'
+import { ThemeProvider } from '@mui/material/styles'
+import { CacheProvider, EmotionCache } from '@emotion/react'
+import type { AppProps } from 'next/app'
+import Head from 'next/head'
+import theme from '../src/Theme/theme'
+import { createEmotionCache } from '../src/Theme/createEmotionCache'
 
 /**
  * @description  Client-side cache, shared for the whole session of the user in the browser.
  */
-const clientSideEmotionCache = createEmotionCache();
+const clientSideEmotionCache = createEmotionCache()
 
 type Props = {
-  emotionCache?: EmotionCache;
-} & AppProps;
+  emotionCache?: EmotionCache
+} & AppProps
 
 function MyApp(props: Props) {
-  const { Component, pageProps, emotionCache = clientSideEmotionCache } = props;
+  const { Component, pageProps, emotionCache = clientSideEmotionCache } = props
 
   return (
     <CacheProvider value={emotionCache}>
@@ -26,12 +26,12 @@ function MyApp(props: Props) {
         <link href="/favicon.ico" rel="icon" />
         <meta content="minimum-scale=1, initial-scale=1, width=device-width" name="viewport" />
       </Head>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <Component {...pageProps} />
-        </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </CacheProvider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

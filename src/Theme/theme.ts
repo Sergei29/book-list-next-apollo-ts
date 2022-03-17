@@ -1,5 +1,5 @@
-import { createTheme, Theme } from '@mui/material/styles';
-import { green, grey } from '@mui/material/colors';
+import { createTheme, Theme } from '@mui/material/styles'
+import { green, grey } from '@mui/material/colors'
 
 /**
  * @description Theme extension: https://mui.com/customization/theming/#custom-variables
@@ -7,34 +7,34 @@ import { green, grey } from '@mui/material/colors';
 declare module '@mui/material/styles' {
   interface Theme {
     status: {
-      danger: string;
-    };
+      danger: string
+    }
     bg: {
-      main: string;
-      inverse: string;
-      secondary: string;
-    };
+      main: string
+      inverse: string
+      secondary: string
+    }
     text: {
-      main: string;
-      inverse: string;
-      accent: string;
-    };
+      main: string
+      inverse: string
+      accent: string
+    }
   }
   // allow configuration using `createTheme`
   interface ThemeOptions {
     status?: {
-      danger?: string;
-    };
+      danger?: string
+    }
     bg?: {
-      main?: string;
-      inverse?: string;
-      secondary?: string;
-    };
+      main?: string
+      inverse?: string
+      secondary?: string
+    }
     text?: {
-      main?: string;
-      inverse?: string;
-      accent?: string;
-    };
+      main?: string
+      inverse?: string
+      accent?: string
+    }
   }
 }
 
@@ -62,6 +62,6 @@ const theme = createTheme({
     inverse: '#cfd6e1',
     accent: green[400],
   },
-});
+})
 
-export default theme;
+export default theme
