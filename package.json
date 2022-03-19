@@ -9,16 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.5.10",
     "@emotion/react": "^11.8.2",
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.5.1",
+    "apollo-server": "^3.6.4",
+    "apollo-server-core": "^3.6.4",
+    "apollo-server-micro": "^3.6.4",
+    "graphql": "^16.3.0",
+    "graphql-tools": "^8.2.1",
+    "micro": "^9.3.4",
     "next": "12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@types/dotenv-load": "^2.0.0",
+    "@types/micro": "^7.3.7",
     "@types/node": "17.0.21",
     "@types/react": "17.0.40",
     "dotenv": "^16.0.0",
