@@ -1,12 +1,11 @@
 import { ApolloServer } from 'apollo-server-micro'
 import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core'
-import schema from '../../../src/apollo/schema'
+import { resolvers } from './resolvers'
+import { typeDefs } from './schema'
 
 const apolloServer = new ApolloServer({
-  schema,
-  context(ctx) {
-    return ctx
-  },
+  typeDefs,
+  resolvers,
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 })
 

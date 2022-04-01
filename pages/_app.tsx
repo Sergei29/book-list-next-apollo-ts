@@ -7,7 +7,6 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import theme from '../src/Theme/theme'
 import { createEmotionCache } from '../src/Theme/createEmotionCache'
-import { useApollo } from '../src/apollo/client'
 
 /**
  * @description  Client-side cache, shared for the whole session of the user in the browser.
@@ -20,7 +19,6 @@ type Props = {
 
 function MyApp(props: Props) {
   const { Component, pageProps, emotionCache = clientSideEmotionCache } = props
-  const apolloClient = useApollo(pageProps.initialApolloState)
 
   return (
     <CacheProvider value={emotionCache}>
@@ -30,10 +28,8 @@ function MyApp(props: Props) {
         <meta content="minimum-scale=1, initial-scale=1, width=device-width" name="viewport" />
       </Head>
       <ThemeProvider theme={theme}>
-        <ApolloProvider client={apolloClient}>
-          <CssBaseline />
-          <Component {...pageProps} />
-        </ApolloProvider>
+        <CssBaseline />
+        <Component {...pageProps} />
       </ThemeProvider>
     </CacheProvider>
   )
