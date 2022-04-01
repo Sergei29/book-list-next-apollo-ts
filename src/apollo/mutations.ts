@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 
 export const ADD_NEW_NOTE = gql`
-  mutation AddNewNote($note: NoteData!) {
+  mutation AddNewNote($note: NoteDataNew!) {
     addNote(note: $note) {
       id
       title
