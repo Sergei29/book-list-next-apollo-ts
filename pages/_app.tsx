@@ -5,6 +5,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import { CacheProvider, EmotionCache } from '@emotion/react'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { apolloClient } from '../src/apollo'
 import theme from '../src/Theme/theme'
 import { createEmotionCache } from '../src/Theme/createEmotionCache'
 
@@ -28,8 +29,10 @@ function MyApp(props: Props) {
         <meta content="minimum-scale=1, initial-scale=1, width=device-width" name="viewport" />
       </Head>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} />
+        <ApolloProvider client={apolloClient}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ApolloProvider>
       </ThemeProvider>
     </CacheProvider>
   )
