@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import type { NextPage, GetServerSideProps } from 'next'
 import { Typography } from '@mui/material'
 import { apolloClient } from '../src/apollo'
 import { GET_ALL_NOTES } from '../src/apollo/queries'
+import { useQuery } from '@apollo/client'
 import { Note } from '../src/types'
 
 // type Props = {
@@ -12,6 +13,12 @@ import { Note } from '../src/types'
 
 const Home: NextPage = () => {
   // console.log('data.getNotes: ', data.getNotes)
+  const { data, loading, error } = useQuery(GET_ALL_NOTES)
+
+  useEffect(() => {
+    console.log('data, loading, error: ', '\n', data, '\n', loading, '\n', error)
+  }, [data, loading, error])
+
   return (
     <div>
       <header>
