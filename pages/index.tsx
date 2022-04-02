@@ -5,13 +5,13 @@ import { apolloClient } from '../src/apollo'
 import { GET_ALL_NOTES } from '../src/apollo/queries'
 import { Note } from '../src/types'
 
-type Props = {
-  data: { getNotes?: Note[] }
-  errorMessage: string | null
-}
+// type Props = {
+//   data: { getNotes?: Note[] }
+//   errorMessage: string | null
+// }
 
-const Home: NextPage<Props> = ({ data, errorMessage }) => {
-  console.log('data.getNotes: ', data.getNotes)
+const Home: NextPage = () => {
+  // console.log('data.getNotes: ', data.getNotes)
   return (
     <div>
       <header>
@@ -29,17 +29,17 @@ const Home: NextPage<Props> = ({ data, errorMessage }) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { data, error } = await apolloClient.query({
-    query: GET_ALL_NOTES,
-  })
+// export const getServerSideProps: GetServerSideProps = async (ctx) => {
+//   const { data, error } = await apolloClient.query({
+//     query: GET_ALL_NOTES,
+//   })
 
-  return {
-    props: {
-      data,
-      errorMesssage: error?.message || null,
-    },
-  }
-}
+//   return {
+//     props: {
+//       data,
+//       errorMesssage: error?.message || null,
+//     },
+//   }
+// }
 
 export default Home
