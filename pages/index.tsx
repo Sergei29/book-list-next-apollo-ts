@@ -6,18 +6,18 @@ import { GET_ALL_NOTES } from '../src/apollo/queries'
 import { useQuery } from '@apollo/client'
 import { Note } from '../src/types'
 
-// type Props = {
-//   data: { getNotes?: Note[] }
-//   errorMessage: string | null
-// }
+type Props = {
+  data: { getNotes?: Note[] }
+  errorMessage: string | null
+}
 
-const Home: NextPage = () => {
-  // console.log('data.getNotes: ', data.getNotes)
-  const { data, loading, error } = useQuery(GET_ALL_NOTES)
+const Home: NextPage<Props> = ({ data, errorMessage }) => {
+  console.log('data.getNotes: ', data.getNotes)
+  // const { data, loading, error } = useQuery(GET_ALL_NOTES)
 
-  useEffect(() => {
-    console.log('data, loading, error: ', '\n', data, '\n', loading, '\n', error)
-  }, [data, loading, error])
+  // useEffect(() => {
+  //   console.log('data, loading, error: ', '\n', data, '\n', loading, '\n', error)
+  // }, [data, loading, error])
 
   return (
     <div>
@@ -36,17 +36,17 @@ const Home: NextPage = () => {
   )
 }
 
-// export const getServerSideProps: GetServerSideProps = async (ctx) => {
-//   const { data, error } = await apolloClient.query({
-//     query: GET_ALL_NOTES,
-//   })
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { data, error } = await apolloClient.query({
+    query: GET_ALL_NOTES,
+  })
 
-//   return {
-//     props: {
-//       data,
-//       errorMesssage: error?.message || null,
-//     },
-//   }
-// }
+  return {
+    props: {
+      data,
+      errorMesssage: error?.message || null,
+    },
+  }
+}
 
 export default Home
