@@ -2,25 +2,23 @@ import React, { useEffect } from 'react'
 import type { NextPage, GetServerSideProps } from 'next'
 import { Typography } from '@mui/material'
 import { apolloClient } from '../apollo/client'
-import { GET_ALL_NOTES } from '../apollo/client'
+// import { GET_ALL_NOTES } from '../apollo/client'
 import { useQuery } from '@apollo/client'
-import { Note } from '../types'
+// import { Note } from '../types'
 
 type Props = {
-  data: { getNotes?: Note[] }
+  // data: { getNotes?: Note[] }
   url?: string
 }
 
-const Home: NextPage<Props> = ({ url, data: serverSideData }) => {
-  console.log('serverSideData.getNotes: ', serverSideData.getNotes)
-
+const Home: NextPage<Props> = ({ url }) => {
   console.log('graphql api url: ', url)
 
-  const { data, loading, error } = useQuery(GET_ALL_NOTES)
+  // const { data, loading, error } = useQuery(GET_ALL_NOTES)
 
-  useEffect(() => {
-    console.log('data, loading, error: ', '\n', data, '\n', loading, '\n', error)
-  }, [data, loading, error])
+  // useEffect(() => {
+  //   console.log('data, loading, error: ', '\n', data, '\n', loading, '\n', error)
+  // }, [data, loading, error])
 
   return (
     <div>
@@ -40,15 +38,15 @@ const Home: NextPage<Props> = ({ url, data: serverSideData }) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { data, error } = await apolloClient.query({
-    query: GET_ALL_NOTES,
-  })
+  // const { data, error } = await apolloClient.query({
+  //   query: GET_ALL_NOTES,
+  // })
 
   const url = process.env.NEXT_PUBLIC_GRAPHQL_URI
 
   return {
     props: {
-      data,
+      // data,
       url,
     },
   }

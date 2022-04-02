@@ -10,10 +10,35 @@ generator client {
   previewFeatures = ["mongoDb"]
 }
 
-model notes {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  title       String
-  description String
+model authors {
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  name String @unique
+  age  Int
+}
+
+model books {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  name        String  @unique
+  genre       String
+  authorId    String  @db.ObjectId
+  addedBy     String
+  description String?
+  imageId     String? @db.ObjectId
+}
+
+model images {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  publicId String @unique
+  imageUrl String
+  width    Int
+  height   Int
+  size     Int
+}
+
+model users {
+  id     String   @id @default(auto()) @map("_id") @db.ObjectId
+  email  String   @unique
+  hash   String?
+  role   String?
+  active Boolean?
 }
