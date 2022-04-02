@@ -7,14 +7,16 @@ import { useQuery } from '@apollo/client'
 import { Note } from '../src/types'
 
 type Props = {
-  // data: { getNotes?: Note[] }
-  // errorMessage: string | null
+  data: { getNotes?: Note[] }
+  errorMessage: string | null
   url?: string
 }
 
-const Home: NextPage<Props> = ({ url }) => {
-  // console.log('data.getNotes: ', data.getNotes)
+const Home: NextPage<Props> = ({ url, data: serverSideData, errorMessage }) => {
+  console.log('serverSideData.getNotes: ', serverSideData.getNotes)
+
   console.log('graphql api url: ', url)
+
   const { data, loading, error } = useQuery(GET_ALL_NOTES)
 
   useEffect(() => {
@@ -47,8 +49,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   return {
     props: {
-      // data,
-      // errorMesssage: error?.message || null,
+      data,
+      errorMesssage: error?.message || null,
       url,
     },
   }
