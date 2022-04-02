@@ -1,4 +1,4 @@
-import { generateDataSource } from '../../db'
+import { generateDataSource } from '../db'
 
 export type Note = {
   id: string

@@ -5,9 +5,9 @@ import { ThemeProvider } from '@mui/material/styles'
 import { CacheProvider, EmotionCache } from '@emotion/react'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import { apolloClient } from '../src/apollo'
-import theme from '../src/Theme/theme'
-import { createEmotionCache } from '../src/Theme/createEmotionCache'
+import { apolloClient } from '../apollo/client'
+import theme from '../Theme/theme'
+import { createEmotionCache } from '../Theme/createEmotionCache'
 
 /**
  * @description  Client-side cache, shared for the whole session of the user in the browser.

@@ -1,5 +1,5 @@
 import { ApolloError } from 'apollo-server-errors'
-import { IResolver } from '../../src/types'
+import { IResolver } from '../../../types'
 
 export const resolvers: IResolver = {
   Query: {

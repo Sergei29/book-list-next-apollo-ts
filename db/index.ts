@@ -1,4 +1,4 @@
-import { Note } from '../src/types'
+import { Note } from '../types'
 import { PrismaClient } from '@prisma/client'
 
 export const generateDataSource = (prisma: PrismaClient) => ({
