@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import type { NextPage, GetServerSideProps } from 'next'
 import { Typography } from '@mui/material'
 import { apolloClient } from '../src/apollo'
 import { GET_ALL_NOTES } from '../src/apollo/queries'
 import { Note } from '../src/types'
-import { gql } from '@apollo/client'
 
 type Props = {
   data: { getNotes?: Note[] }
