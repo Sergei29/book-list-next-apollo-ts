@@ -4,7 +4,7 @@ import { resolvers } from './resolvers'
 import { typeDefs } from './schema'
 import Cors from 'micro-cors'
 
-const cors = Cors()
+const cors = Cors({ origin: '*' })
 
 const apolloServer = new ApolloServer({
   typeDefs,
