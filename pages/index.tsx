@@ -6,13 +6,17 @@ import { GET_ALL_NOTES } from '../src/apollo/queries'
 import { useQuery } from '@apollo/client'
 import { Note } from '../src/types'
 
-// type Props = {
-//   data: { getNotes?: Note[] }
-//   errorMessage: string | null
-// }
+type Props = {
+  data: { getNotes?: Note[] }
+  errorMessage: string | null
+  url?: string
+}
 
-const Home: NextPage = () => {
-  // console.log('data.getNotes: ', data.getNotes)
+const Home: NextPage<Props> = ({ url, data: serverSideData, errorMessage }) => {
+  console.log('serverSideData.getNotes: ', serverSideData.getNotes)
+
+  console.log('graphql api url: ', url)
+
   const { data, loading, error } = useQuery(GET_ALL_NOTES)
 
   useEffect(() => {
@@ -36,17 +40,20 @@ const Home: NextPage = () => {
   )
 }
 
-// export const getServerSideProps: GetServerSideProps = async (ctx) => {
-//   const { data, error } = await apolloClient.query({
-//     query: GET_ALL_NOTES,
-//   })
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { data, error } = await apolloClient.query({
+    query: GET_ALL_NOTES,
+  })
 
-//   return {
-//     props: {
-//       data,
-//       errorMesssage: error?.message || null,
-//     },
-//   }
-// }
+  const url = process.env.NEXT_PUBLIC_GRAPHQL_URI
+
+  return {
+    props: {
+      data,
+      errorMesssage: error?.message || null,
+      url,
+    },
+  }
+}
 
 export default Home
