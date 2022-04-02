@@ -8,11 +8,10 @@ import { Note } from '../src/types'
 
 type Props = {
   data: { getNotes?: Note[] }
-  errorMessage: string | null
   url?: string
 }
 
-const Home: NextPage<Props> = ({ url, data: serverSideData, errorMessage }) => {
+const Home: NextPage<Props> = ({ url, data: serverSideData }) => {
   console.log('serverSideData.getNotes: ', serverSideData.getNotes)
 
   console.log('graphql api url: ', url)
@@ -50,7 +49,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   return {
     props: {
       data,
-      errorMesssage: error?.message || null,
       url,
     },
   }
