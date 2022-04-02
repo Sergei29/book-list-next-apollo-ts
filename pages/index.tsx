@@ -39,9 +39,9 @@ const Home: NextPage<Props> = ({ url }) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  // const { data, error } = await apolloClient.query({
-  //   query: GET_ALL_NOTES,
-  // })
+  const { data, error } = await apolloClient.query({
+    query: GET_ALL_NOTES,
+  })
 
   const url = process.env.NEXT_PUBLIC_GRAPHQL_URI
 
