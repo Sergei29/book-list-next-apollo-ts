@@ -1,13 +1,11 @@
 import * as React from 'react'
 import { ApolloProvider } from '@apollo/client'
-import CssBaseline from '@mui/material/CssBaseline'
-import { ThemeProvider } from '@mui/material/styles'
 import { CacheProvider, EmotionCache } from '@emotion/react'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { apolloClient } from '../apollo/client'
-import theme from '../Theme/theme'
 import { createEmotionCache } from '../Theme/createEmotionCache'
+import ThemeContainer from '../containers/ThemeContainer'
 
 /**
  * @description  Client-side cache, shared for the whole session of the user in the browser.
@@ -28,12 +26,11 @@ function MyApp(props: Props) {
         <link href="/favicon.ico" rel="icon" />
         <meta content="minimum-scale=1, initial-scale=1, width=device-width" name="viewport" />
       </Head>
-      <ThemeProvider theme={theme}>
-        <ApolloProvider client={apolloClient}>
-          <CssBaseline />
+      <ApolloProvider client={apolloClient}>
+        <ThemeContainer>
           <Component {...pageProps} />
-        </ApolloProvider>
-      </ThemeProvider>
+        </ThemeContainer>
+      </ApolloProvider>
     </CacheProvider>
   )
 }

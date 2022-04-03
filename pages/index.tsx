@@ -29,7 +29,7 @@ const Home: NextPage<Props> = ({ url, data }) => {
       </header>
 
       <main>
-        <Typography variant="h1" sx={{ textAlign: 'center', color: (theme) => theme.text.accent }}>
+        <Typography variant="h1" sx={{ textAlign: 'center', color: (theme) => theme.palette.primary.main }}>
           book list
         </Typography>
       </main>
