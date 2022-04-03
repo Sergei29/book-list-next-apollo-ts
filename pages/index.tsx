@@ -5,6 +5,7 @@ import { apolloClient } from '../apollo/client'
 import { GET_BOOKS } from '../apollo/client'
 import { useQuery } from '@apollo/client'
 import { BookType } from '../types'
+import PageContainer from '../containers/PageContainer'
 
 type Props = {
   data: { books?: BookType[] }
@@ -23,19 +24,13 @@ const Home: NextPage<Props> = ({ url, data }) => {
   // }, [data, loading, error])
 
   return (
-    <div>
-      <header>
-        <nav>nav</nav>
-      </header>
-
+    <PageContainer>
       <main>
         <Typography variant="h1" sx={{ textAlign: 'center', color: (theme) => theme.palette.primary.main }}>
           book list
         </Typography>
       </main>
-
-      <footer>footer</footer>
-    </div>
+    </PageContainer>
   )
 }
 
