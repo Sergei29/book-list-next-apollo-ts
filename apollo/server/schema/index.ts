@@ -65,7 +65,7 @@ export const typeDefs = gql`
       name: String!
       genre: String!
       authorId: ID!
-      addedBy: String
+      addedBy: String!
       description: String
       strBase64ImageFile: String
     ): Book!

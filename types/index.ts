@@ -18,6 +18,11 @@ export enum Role {
   USER = 'USER',
 }
 
+export enum MuiSelectedTheme {
+  LIGHT = 'light',
+  DARK = 'dark',
+}
+
 export type BookDataType = {
   name: string
   genre: string
