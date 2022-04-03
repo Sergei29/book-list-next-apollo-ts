@@ -56,7 +56,10 @@ const deleteManyFromCloudinaryByIds = async (arrImagePublicIds: string[]) => {
 }
 
 export const generateBooksDataSource = (prisma: PrismaClient) => ({
-  getAllBooks: async () => await prisma.books.findMany(),
+  getAllBooks: async () => {
+    const allBooks = await prisma.books.findMany()
+    return allBooks
+  },
 
   getBookById: async (id: string) =>
     await prisma.books.findUnique({
@@ -68,10 +71,12 @@ export const generateBooksDataSource = (prisma: PrismaClient) => ({
       where: { name },
     }),
 
-  getBooksByAuthorId: async (authorId: string): Promise<any> =>
-    await prisma.books.findRaw({
-      filter: { authorId: { $eq: authorId } },
-    }),
+  getBooksByAuthorId: async (authorId: string): Promise<any> => {
+    const books = await prisma.books.findMany({
+      where: { authorId },
+    })
+    return books
+  },
   addNewBook: async (newBook: BookDataType) =>
     await prisma.books.create({
       data: { ...newBook },

@@ -20,10 +20,10 @@ model books {
   id          String  @id @default(auto()) @map("_id") @db.ObjectId
   name        String  @unique
   genre       String
-  authorId    String  @db.ObjectId
+  authorId    String
   addedBy     String
   description String?
-  imageId     String? @db.ObjectId
+  imageId     String?
 }
 
 model images {
