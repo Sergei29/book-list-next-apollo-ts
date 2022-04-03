@@ -23,6 +23,20 @@ export enum MuiSelectedTheme {
   DARK = 'dark',
 }
 
+export type ValidationType = {
+  bIsValid: boolean
+  strErrorMessage: string
+}
+
+export type NewBookFormStateType = {
+  name: string
+  genre: string
+  authorId: string
+  addedBy: string
+  description: string
+  strBase64ImageFile: null | string
+}
+
 export type BookDataType = {
   name: string
   genre: string
@@ -97,4 +111,42 @@ export type EmailContentType = {
   subject: string
   text: string
   html: string
+}
+
+// client side types:
+
+export type FormValidationStateType = Readonly<
+  Record<'name' | 'genre' | 'authorId' | 'description' | 'strBase64ImageFile', ValidationType>
+>
+
+export type Author = {
+  id: string
+  name?: string | undefined
+  age?: number | undefined
+  books?: BookType[] | undefined
+}
+export type ImageType = {
+  id: string
+  imageUrl: string
+}
+
+export type Book = {
+  id: string
+  name?: string | undefined
+  genre?: string | undefined
+  author?: Author | undefined
+  addedBy?: string | undefined
+  description?: string | null | undefined
+  image?: ImageType | null
+}
+
+export type ObjValidationType = {
+  bIsValid: boolean
+  strErrorMessage: string
+}
+
+export type SignUpFormStateType = {
+  email: string
+  password: string
+  confirm_password: string
 }
