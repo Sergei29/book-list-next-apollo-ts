@@ -2,17 +2,19 @@ import React, { useEffect } from 'react'
 import type { NextPage, GetServerSideProps } from 'next'
 import { Typography } from '@mui/material'
 import { apolloClient } from '../apollo/client'
-// import { GET_ALL_NOTES } from '../apollo/client'
+import { GET_BOOKS } from '../apollo/client'
 import { useQuery } from '@apollo/client'
-// import { Note } from '../types'
+import { BookType } from '../types'
 
 type Props = {
-  // data: { getNotes?: Note[] }
+  data: { books?: BookType[] }
   url?: string
 }
 
-const Home: NextPage<Props> = ({ url }) => {
+const Home: NextPage<Props> = ({ url, data }) => {
   console.log('graphql api url: ', url)
+
+  console.log('data.books', data.books)
 
   // const { data, loading, error } = useQuery(GET_ALL_NOTES)
 
@@ -38,15 +40,15 @@ const Home: NextPage<Props> = ({ url }) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  // const { data, error } = await apolloClient.query({
-  //   query: GET_ALL_NOTES,
-  // })
+  const { data, error } = await apolloClient.query({
+    query: GET_BOOKS,
+  })
 
   const url = process.env.NEXT_PUBLIC_GRAPHQL_URI
 
   return {
     props: {
-      // data,
+      data,
       url,
     },
   }
