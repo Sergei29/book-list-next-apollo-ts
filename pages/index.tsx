@@ -4,7 +4,7 @@ import { Typography } from '@mui/material'
 import { apolloClient } from '../apollo/client'
 import { GET_BOOKS } from '../apollo/client'
 import { useQuery } from '@apollo/client'
-import { BookType } from '../types'
+// import { BookType } from '../types'
 
 type Props = {
   // data: { books?: BookType[] }
