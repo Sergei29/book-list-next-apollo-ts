@@ -1,10 +1,3 @@
-import {
-  generateAuthorsDataSource,
-  generateBooksDataSource,
-  generateImagesDataSource,
-  generateUsersDataSource,
-} from '../db'
-
 export enum Expiry {
   IN_1_HOUR = 60 * 60 * 1000,
   IN_24_HOURS = 60 * 60 * 24 * 1000,
@@ -81,25 +74,6 @@ export enum ErrorMessage {
   LOGIN_REQUIRED = 'Please login again.',
   WRONG_PASSWORD = 'Wrong password.',
   NOT_ALOWED = 'Action not allowed.',
-}
-
-export type Context = {
-  dataSources: {
-    authors: ReturnType<typeof generateAuthorsDataSource>
-    books: ReturnType<typeof generateBooksDataSource>
-    images: ReturnType<typeof generateImagesDataSource>
-    users: ReturnType<typeof generateUsersDataSource>
-  }
-  user: null | UserType
-} & Record<string, any>
-
-export type IResolverFunc = (parent: ObjType, args: ObjType, ctx: Context, info: ObjType) => Promise<any> | any
-
-export type IResolver = {
-  Query: Record<string, IResolverFunc>
-  Mutation: Record<string, IResolverFunc>
-  Book: Record<string, IResolverFunc>
-  Author: Record<string, IResolverFunc>
 }
 
 export type TokenPayloadType = {
