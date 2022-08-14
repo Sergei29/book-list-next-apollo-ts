@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Base64 } from 'js-base64'
 import { useMutation } from '@apollo/client'
-import { SIGN_UP } from '../../apollo/client'
+import { SIGN_UP } from '../../apollo'
 import { objAuthContext } from '../../containers/AuthProvider'
 import { UserType, ObjValidationType, SignUpFormStateType } from '../../types'
 import { getIntitialValidation } from '../helpers/getIntitialValidation'

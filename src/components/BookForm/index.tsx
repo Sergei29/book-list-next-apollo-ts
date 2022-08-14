@@ -7,7 +7,7 @@ import {
   CollectionsBookmark as CollectionsBookmarkIcon,
 } from '@mui/icons-material'
 import { InputAdornment, MenuItem, CardMedia, Typography, Box } from '@mui/material'
-import { GET_AUTHORS } from '../../apollo/client'
+import { GET_AUTHORS } from '../../apollo'
 import TextField from '../common/TextField'
 import FileInput from '../common/FileInput'
 import SubmitButton from '../common/SubmitButton'
