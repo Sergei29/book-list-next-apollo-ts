@@ -8,7 +8,7 @@ import PageContainer from '../containers/PageContainer'
 import { objAuthContext } from '../containers/AuthProvider'
 import { useBookListPage } from '../hooks'
 import { OBJ_TEST_IDS } from '../constants'
-//components:
+
 import BookList from '../components/BookList'
 import BookDetails from '../components/BookDetails'
 import AddBook from '../components/AddBook'
@@ -21,9 +21,6 @@ type Props = {
 }
 
 const Home: NextPage<Props> = ({ url, data }) => {
-  console.log('graphql api url: ', url)
-
-  console.log('data.books', data.books)
   const [bDisplayCloud, setbDisplayCloud] = useState<boolean>(false)
   const { getIsAuthenticated } = useContext(objAuthContext)
   const { nStrSelectedBookId, handleBookSelect, handleBookDeselect } = useBookListPage()
