@@ -9,6 +9,7 @@ type Props = {
   bDisplayCloud: boolean
   onBookSelect: (strId: string) => () => void
   arrBooks?: Book[]
+  nStrSelectedBookId: string | null
 }
 
 /**
@@ -16,7 +17,7 @@ type Props = {
  * @param {Function} {onBookSelect callback function on selecting a single book}
  * @returns {JSX} coponent markup
  */
-const BookList: React.FC<Props> = ({ bDisplayCloud, onBookSelect, arrBooks }) => {
+const BookList: React.FC<Props> = ({ bDisplayCloud, onBookSelect, arrBooks, nStrSelectedBookId }) => {
   if (!arrBooks || arrBooks?.length === 0) return <p>No books.</p>
 
   return bDisplayCloud ? (
@@ -43,7 +44,10 @@ const BookList: React.FC<Props> = ({ bDisplayCloud, onBookSelect, arrBooks }) =>
             border: (theme) => `1px solid ${theme.palette.secondary.main}`,
             boxShadow: `1px 2px 3px rgba(0, 0, 0, 0.3)`,
             cursor: 'pointer',
-            color: (theme) => theme.palette.secondary.main,
+            color: (theme) =>
+              nStrSelectedBookId === objBook!.id ? theme.custom?.bookButton?.color : theme.palette.secondary.main,
+            backgroundColor: (theme) =>
+              nStrSelectedBookId === objBook!.id ? theme.palette.secondary.main : 'transparent',
             fontWeight: 500,
             transition: (theme) => `all 200ms ${theme.transitions.easing.easeInOut}`,
             '&:hover': {

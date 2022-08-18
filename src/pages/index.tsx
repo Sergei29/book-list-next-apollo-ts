@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import type { NextPage, GetServerSideProps } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import { Typography, Box } from '@mui/material'
 
 import { objAuthContext } from '@/containers/AuthProvider'
@@ -15,12 +15,23 @@ import Background from '@/components/Background'
 import BookList from '@/components/BookList'
 import AddBook from '@/components/AddBook'
 
-type Props = {
-  data: { books?: Book[] }
-  url?: string
+export const getStaticProps: GetStaticProps = async (_ctx) => {
+  const { data } = await apolloClient.query<{ books?: Book[] }>({
+    query: GET_BOOKS,
+  })
+
+  return {
+    props: {
+      arrBooks: data.books,
+    },
+  }
 }
 
-const Home: NextPage<Props> = ({ url, data }) => {
+type PageProps = {
+  arrBooks?: Book[]
+}
+
+const Home: NextPage<PageProps> = ({ arrBooks }) => {
   const [bDisplayCloud, setbDisplayCloud] = useState<boolean>(false)
   const { getIsAuthenticated } = useContext(objAuthContext)
   const { nStrSelectedBookId, handleBookSelect, handleBookDeselect } = useBookListPage()
@@ -53,7 +64,12 @@ const Home: NextPage<Props> = ({ url, data }) => {
           My Reading List
           <ChangeListLayoutButton onClick={funcToggleLayout} bDisplayCloud={bDisplayCloud} />
         </Typography>
-        <BookList arrBooks={data.books} bDisplayCloud={bDisplayCloud} onBookSelect={handleBookSelect} />
+        <BookList
+          arrBooks={arrBooks}
+          bDisplayCloud={bDisplayCloud}
+          onBookSelect={handleBookSelect}
+          nStrSelectedBookId={nStrSelectedBookId}
+        />
 
         {getIsAuthenticated() && <AddBook nStrSelectedBookId={nStrSelectedBookId} />}
         <BookDetails
@@ -65,21 +81,6 @@ const Home: NextPage<Props> = ({ url, data }) => {
       </Box>
     </PageContainer>
   )
-}
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { data, error } = await apolloClient.query({
-    query: GET_BOOKS,
-  })
-
-  const url = process.env.NEXT_PUBLIC_GRAPHQL_URI
-
-  return {
-    props: {
-      data,
-      url,
-    },
-  }
 }
 
 export default Home
