@@ -23,6 +23,7 @@ const MobileNavLink = ({ children, ...restLinkProps }: Props) => {
         width: '100%',
         backgroundColor: (theme) => (bActiveLink ? theme.custom?.bookDetails?.background : 'auto'),
       }}
+      {...restLinkProps}
     >
       {children}
     </Box>

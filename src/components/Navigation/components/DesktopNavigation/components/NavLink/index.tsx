@@ -19,6 +19,7 @@ const NavLink = ({ children, ...restLinkProps }: Props) => {
         textDecoration: 'none',
         textDecorationLine: bActiveLink ? 'underline' : 'none',
       }}
+      {...restLinkProps}
     >
       {children}
     </Box>

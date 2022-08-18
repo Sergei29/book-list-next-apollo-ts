@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Container } from '@mui/material'
 
+import Navigation from '@/components/Navigation'
 import PageBackground from './components/PageBackground'
 
 type Props = {
@@ -9,7 +10,8 @@ type Props = {
 
 const PageContainer = ({ children }: Props) => {
   return (
-    <Box>
+    <>
+      <Navigation />
       <PageBackground />
       <Container
         sx={{
@@ -19,7 +21,7 @@ const PageContainer = ({ children }: Props) => {
       >
         {children}
       </Container>
-    </Box>
+    </>
   )
 }
 

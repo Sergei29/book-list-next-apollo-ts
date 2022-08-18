@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { useTheme, useMediaQuery } from '@mui/material'
+import { useTheme, useMediaQuery, Box } from '@mui/material'
 
 import { useCurrentTheme, useModal, useAuthentication } from '@/hooks'
 import { objAuthContext } from '@/containers/AuthProvider'
@@ -24,7 +24,15 @@ const Navigation: React.FC = () => {
   const [bSignUp, setBSignUp] = useState<boolean>(false)
 
   return (
-    <div data-testid={OBJ_TEST_IDS.navigationContainer}>
+    <Box
+      data-testid={OBJ_TEST_IDS.navigationContainer}
+      sx={{
+        width: {
+          xs: '100%',
+          md: '60%',
+        },
+      }}
+    >
       {true === bIsMobileScreen ? (
         <MobileNavigation
           bAdmin={getIsAdmin()}
@@ -51,7 +59,7 @@ const Navigation: React.FC = () => {
           <SignInForm funcCloseModal={funcModalClose} setBSignUp={setBSignUp} />
         )}
       </AuthModal>
-    </div>
+    </Box>
   )
 }
 

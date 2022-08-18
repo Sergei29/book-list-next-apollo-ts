@@ -47,6 +47,7 @@ const DesktopNavigation: React.FC<Props> = ({
         sx={{
           display: 'flex',
           alignItems: 'center',
+          columnGap: 2,
           margin: 0,
           padding: 0,
           listStyleType: 'none',
@@ -64,9 +65,7 @@ const DesktopNavigation: React.FC<Props> = ({
           <AuthLink bLoggedIn={bLoggedIn} funcModalOpen={funcModalOpen} handleLogout={handleLogout} />
         </NavListItem>
         <NavListItem>
-          <span>
-            <GitHubButton bLightTheme={bLightTheme} />
-          </span>
+          <GitHubButton bLightTheme={bLightTheme} />
         </NavListItem>
         <NavListItem bLastItem>
           <Tooltip title={`switch theme to ${bLightTheme ? DARK : LIGHT}`}>

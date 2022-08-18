@@ -9,19 +9,9 @@ type Props = {
 const NavListItem = ({ children, bLastItem = false }: Props) => (
   <Box
     component="li"
-    sx={
-      bLastItem
-        ? {
-            display: 'inline-block',
-            margin: (theme) => `0 ${theme.spacing(0.75)}px`,
-          }
-        : {
-            marginLeft: 'auto',
-            marginRight: {
-              md: '40%',
-            },
-          }
-    }
+    sx={{
+      marginLeft: bLastItem ? 'auto' : 'unset',
+    }}
   >
     {children}
   </Box>
