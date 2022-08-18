@@ -11,6 +11,7 @@ const NavListItem = ({ children, bLastItem = false }: Props) => (
     component="li"
     sx={{
       marginLeft: bLastItem ? 'auto' : 'unset',
+      marginRight: bLastItem ? 1 : 'unset',
     }}
   >
     {children}

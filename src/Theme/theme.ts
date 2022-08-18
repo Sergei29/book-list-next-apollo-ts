@@ -67,6 +67,7 @@ export const themeLight = createTheme({
       light: '#ffffe4',
       dark: '#cbae82',
     },
+    mode: 'light',
   },
   custom: {
     bookButton: { color: '#fff' },
@@ -105,6 +106,7 @@ export const themeDark = createTheme({
       light: '#ffffe4',
       dark: '#cbae82',
     },
+    mode: 'dark',
   },
   custom: {
     bookButton: { color: grey[400] },

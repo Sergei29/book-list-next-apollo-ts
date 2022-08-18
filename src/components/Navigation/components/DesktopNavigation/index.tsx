@@ -68,7 +68,7 @@ const DesktopNavigation: React.FC<Props> = ({
           <GitHubButton bLightTheme={bLightTheme} />
         </NavListItem>
         <NavListItem bLastItem>
-          <Tooltip title={`switch theme to ${bLightTheme ? DARK : LIGHT}`}>
+          <Tooltip title={<span>{`switch theme to ${bLightTheme ? DARK : LIGHT}`}</span>}>
             <Switch checked={bLightTheme} onChange={funcToggleTheme} data-testid={OBJ_TEST_IDS.themeSwitch} />
           </Tooltip>
         </NavListItem>
