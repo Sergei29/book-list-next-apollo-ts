@@ -2,13 +2,14 @@ import React, { Fragment } from 'react'
 import { useRouter } from 'next/router'
 import { FormControl, Button, Box, Typography } from '@mui/material'
 import { ExitToApp as ExitToAppIcon } from '@mui/icons-material'
-import TextField from '../common/TextField'
-import ShowPasswordButton from '../common/ShowPasswordButton'
-import SubmitButton from '../common/SubmitButton'
-import ResetButton from '../common/ResetButton'
-import PageBackDrop from '../common/PageBackDrop'
-import Loader from '../common/Loader'
-import { useSignUpForm } from '../../hooks'
+
+import ShowPasswordButton from '@/components/common/ShowPasswordButton'
+import SubmitButton from '@/components/common/SubmitButton'
+import PageBackDrop from '@/components/common/PageBackDrop'
+import ResetButton from '@/components/common/ResetButton'
+import TextField from '@/components/common/TextField'
+import Loader from '@/components/common/Loader'
+import { useSignUpForm } from '@/hooks'
 
 type Props = {
   funcCloseModal: () => void

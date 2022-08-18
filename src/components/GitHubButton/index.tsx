@@ -1,8 +1,9 @@
 import React from 'react'
 import { ListItem, ListItemIcon, ListItemText, useTheme, useMediaQuery, Link } from '@mui/material'
 import { GitHub as GitHubIcon } from '@mui/icons-material'
-import { OBJ_TEST_IDS } from '../../constants'
-import { animationShake } from '../../Theme'
+
+import { OBJ_TEST_IDS } from '@/constants'
+import { animationShake } from '@/Theme'
 
 type Props = {
   bLightTheme: boolean

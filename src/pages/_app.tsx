@@ -1,12 +1,13 @@
 import * as React from 'react'
-import { ApolloProvider } from '@apollo/client'
 import { CacheProvider, EmotionCache } from '@emotion/react'
+import { ApolloProvider } from '@apollo/client'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import { apolloClient } from '../apollo'
-import { createEmotionCache } from '../Theme/createEmotionCache'
-import ThemeContainer from '../containers/ThemeContainer'
-import AuthProvider from '../containers/AuthProvider'
+
+import { createEmotionCache } from '@/Theme/createEmotionCache'
+import ThemeContainer from '@/containers/ThemeContainer'
+import AuthProvider from '@/containers/AuthProvider'
+import { apolloClient } from '@/apollo'
 
 /**
  * @description  Client-side cache, shared for the whole session of the user in the browser.

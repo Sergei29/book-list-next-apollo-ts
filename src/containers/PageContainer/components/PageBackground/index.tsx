@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box } from '@mui/material'
-import { OBJ_TEST_IDS } from '../../../../constants'
+
+import { OBJ_TEST_IDS } from '@/constants'
 
 const PageBackground = () => (
   <Box

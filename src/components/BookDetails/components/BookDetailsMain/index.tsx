@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, BoxProps, Typography, CardMedia } from '@mui/material'
-import { STR_DEFAULT_BOOK_IMG_URL } from '../../../../constants'
+
+import { STR_DEFAULT_BOOK_IMG_URL } from '@/constants'
 
 type Props = {
   strImageUrl?: string

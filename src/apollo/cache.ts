@@ -1,5 +1,6 @@
-import { InMemoryCache, InMemoryCacheConfig } from "@apollo/client";
-import { favoritesReactiveVar, currentThemeVar } from "./reactiveVars";
+import { InMemoryCache, InMemoryCacheConfig } from '@apollo/client'
+
+import { favoritesReactiveVar, currentThemeVar } from './reactiveVars'
 
 const objConfig: InMemoryCacheConfig = {
   typePolicies: {
@@ -14,6 +15,6 @@ const objConfig: InMemoryCacheConfig = {
       },
     },
   },
-};
+}
 
-export const cache = new InMemoryCache(objConfig);
+export const cache = new InMemoryCache(objConfig)

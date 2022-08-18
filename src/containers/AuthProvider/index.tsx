@@ -1,5 +1,6 @@
 import React, { useState, createContext } from 'react'
-import { UserType, Role } from '../../types'
+
+import { UserType, Role } from '@/types'
 
 const objInitialContext: Readonly<AuthContextType> = {
   objAuthInfo: { nObjUserData: null },

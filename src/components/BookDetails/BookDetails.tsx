@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 import { Typography, Chip, Box } from '@mui/material'
-import { objAuthContext } from '../../containers/AuthProvider'
-import { useBookDetails } from '../../hooks'
+
+import { objAuthContext } from '@/containers/AuthProvider'
+import { useBookDetails } from '@/hooks'
 import BookDetailsHeader from './components/BookDetailsHeader'
 import BookDetailsMain from './components/BookDetailsMain'
 

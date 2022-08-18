@@ -2,7 +2,8 @@ import React, { Fragment, useRef } from 'react'
 import Button, { ButtonProps } from '@mui/material/Button'
 import FormHelperText from '@mui/material/FormHelperText'
 import { AddAPhoto as AddAPhotoIcon } from '@mui/icons-material'
-import { ValidationType } from '../../../types'
+
+import { ValidationType } from '@/types'
 
 type Props = {
   handleChange: (strFieldName: string, objFileValue: InstanceType<typeof File>) => void

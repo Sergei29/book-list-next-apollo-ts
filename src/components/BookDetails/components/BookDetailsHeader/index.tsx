@@ -1,5 +1,6 @@
 import React from 'react'
 import { Typography, Box, BoxProps } from '@mui/material'
+
 import FavButton from '../FavButton'
 import EditButton from '../EditButton'
 

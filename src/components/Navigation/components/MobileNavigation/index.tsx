@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Drawer, Divider, List, ListItem, ListItemIcon, ListItemText, IconButton, Box } from '@mui/material'
 import { Menu as MenuIcon, SupervisorAccount as SupervisorAccountIcon, Home as HomeIcon } from '@mui/icons-material'
-import { MuiSelectedTheme } from '../../../../types'
-import { OBJ_TEST_IDS } from '../../../../constants'
-// components:
-import GitHubButton from '../../../GitHubButton'
-import AuthLink from '../../../AuthLink'
-import Switch from '../../../common/Switch'
+
+import GitHubButton from '@/components/GitHubButton'
+import Switch from '@/components/common/Switch'
+import AuthLink from '@/components/AuthLink'
+import { MuiSelectedTheme } from '@/types'
+import { OBJ_TEST_IDS } from '@/constants'
 import MobileNavLink from './components/MobileNavLink'
 
 const { LIGHT, DARK } = MuiSelectedTheme

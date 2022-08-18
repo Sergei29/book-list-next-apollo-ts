@@ -1,8 +1,9 @@
 import React from 'react'
 import CssBaseline from '@mui/material/CssBaseline'
 import { ThemeProvider } from '@mui/material/styles'
-import { useCurrentTheme } from '../../hooks'
-import { themeDark, themeLight } from '../../Theme/theme'
+
+import { themeDark, themeLight } from '@/Theme/theme'
+import { useCurrentTheme } from '@/hooks'
 
 type Props = {
   children: React.ReactNode

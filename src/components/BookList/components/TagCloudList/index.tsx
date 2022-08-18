@@ -1,8 +1,9 @@
 import React, { memo } from 'react'
 import { Box } from '@mui/material'
 import { TagCloud } from 'react-tagcloud'
-import { useCurrentTheme } from '../../../../hooks'
-import { Book } from '../../../../types'
+
+import { useCurrentTheme } from '@/hooks'
+import { Book } from '@/types'
 
 /**
  * @description formatting array, inteerface adaptor func

@@ -1,13 +1,12 @@
 import React, { useContext, useState } from 'react'
 import { useTheme, useMediaQuery } from '@mui/material'
-import { useAuthentication } from '../../hooks/useAuthentication'
-import { useCurrentTheme, useModal } from '../../hooks'
-import { objAuthContext } from '../../containers/AuthProvider'
-import { OBJ_TEST_IDS } from '../../constants'
-// components:
-import AuthModal from '../AuthModal'
-import SignInForm from '../SignInForm'
-import SignUpForm from '../SignUpForm'
+
+import { useCurrentTheme, useModal, useAuthentication } from '@/hooks'
+import { objAuthContext } from '@/containers/AuthProvider'
+import SignInForm from '@/components/SignInForm'
+import SignUpForm from '@/components/SignUpForm'
+import AuthModal from '@/components/AuthModal'
+import { OBJ_TEST_IDS } from '@/constants'
 import MobileNavigation from './components/MobileNavigation'
 import DesktopNavigation from './components/DesktopNavigation'
 

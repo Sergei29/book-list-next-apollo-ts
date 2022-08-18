@@ -1,8 +1,9 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import createEmotionServer from '@emotion/server/create-instance'
-import { themeLight } from '../Theme/theme'
-import { createEmotionCache } from '../Theme/createEmotionCache'
+
+import { createEmotionCache } from '@/Theme/createEmotionCache'
+import { themeLight } from '@/Theme/theme'
 
 // https://mui.com/styles/advanced/#next-js
 export default class MyDocument extends Document {

@@ -1,9 +1,10 @@
 import React, { useState, useCallback, useContext } from 'react'
 import { Base64 } from 'js-base64'
 import { useMutation } from '@apollo/client'
-import { objAuthContext } from '../../containers/AuthProvider'
-import { SIGN_IN } from '../../apollo'
-import { UserType } from '../../types'
+
+import { objAuthContext } from '@/containers/AuthProvider'
+import { SIGN_IN } from '@/apollo'
+import { UserType } from '@/types'
 
 type SignInPayloadType = { signIn: { user: UserType } }
 type FormStateType = {

@@ -1,4 +1,4 @@
-import { NewBookFormStateType, Book, ValidationType } from '../../types'
+import { NewBookFormStateType, Book, ValidationType } from '@/types'
 import { FormValidationStateType } from '../useAddBookForm'
 
 export const validateAddBookName = (strBookName: string, arrBooks?: (Book | null)[]): ValidationType => {

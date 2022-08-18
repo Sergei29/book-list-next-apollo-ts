@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useQuery, useMutation } from '@apollo/client'
-import { GET_BOOKS, EDIT_BOOK } from '../../apollo'
-import { validateEditBookForm } from '../helpers/validateForm'
-import { objAuthContext } from '../../containers/AuthProvider'
-import { NewBookFormStateType, Book } from '../../types'
+
+import { validateEditBookForm } from '@/hooks/helpers/validateForm'
+import { objAuthContext } from '@/containers/AuthProvider'
+import { NewBookFormStateType, Book } from '@/types'
+import { GET_BOOKS, EDIT_BOOK } from '@/apollo'
 import {
   getNewBookInitialState,
   INITIAL_BOOK_BLANK_STATE,

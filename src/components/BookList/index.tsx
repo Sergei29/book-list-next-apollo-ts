@@ -1,8 +1,9 @@
 import React from 'react'
 import { Box } from '@mui/material'
-import { Book } from '../../types'
+
+import { animationShake } from '@/Theme'
+import { Book } from '@/types'
 import TagCloudList from './components/TagCloudList'
-import { animationShake } from '../../Theme'
 
 type Props = {
   bDisplayCloud: boolean

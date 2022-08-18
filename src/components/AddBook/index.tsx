@@ -1,6 +1,7 @@
 import React, { useState, Fragment } from 'react'
 import { Dialog, DialogContent, DialogTitle, Typography, lighten } from '@mui/material'
-import AddButton from '../AddButton'
+
+import AddButton from '@/components/AddButton'
 import AddBookForm from './components/AddBookForm'
 
 type Props = {

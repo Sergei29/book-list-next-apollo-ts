@@ -1,6 +1,7 @@
 import { useQuery, ApolloError } from '@apollo/client'
-import { GET_FAVORITES, GET_BOOK_DETAILS, favoritesReactiveVar } from '../../apollo'
-import { Book } from '../../types'
+
+import { GET_FAVORITES, GET_BOOK_DETAILS, favoritesReactiveVar } from '@/apollo'
+import { Book } from '@/types'
 
 type HookProps = {
   strBookId: string

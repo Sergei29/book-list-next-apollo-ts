@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
 import { FormControl, Button, Box, Typography, Tooltip, alpha } from '@mui/material'
 import { ExitToApp as ExitToAppIcon } from '@mui/icons-material'
-import TextField from '../common/TextField'
-import ShowPasswordButton from '../common/ShowPasswordButton'
-import { useLoginForm } from '../../hooks/useLoginForm'
-import { useCopytoClipboard } from '../../hooks/useCopytoClipboard'
+
+import ShowPasswordButton from '@/components/common/ShowPasswordButton'
+import { useLoginForm, useCopytoClipboard } from '@/hooks'
+import TextField from '@/components/common/TextField'
 
 type Props = {
   funcCloseModal: () => void

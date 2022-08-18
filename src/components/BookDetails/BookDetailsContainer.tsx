@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from 'react'
 import { Typography, useMediaQuery, useTheme, Dialog, DialogContent, Box } from '@mui/material'
-// components:
+
 import EditBook from '../EditBook'
 import BookDetails from './BookDetails'
 

@@ -1,14 +1,13 @@
 import React from 'react'
-import Link, { LinkProps } from 'next/link'
 import { Tooltip, Box } from '@mui/material'
-import { MuiSelectedTheme } from '../../../../types'
-import { OBJ_TEST_IDS } from '../../../../constants'
-// components:
-import GitHubButton from '../../../GitHubButton'
-import AuthLink from '../../../AuthLink'
-import Switch from '../../../common/Switch'
+
+import GitHubButton from '@/components/GitHubButton'
+import Switch from '@/components/common/Switch'
+import AuthLink from '@/components/AuthLink'
 import NavListItem from './components/NavListItem'
 import NavLink from './components/NavLink'
+import { MuiSelectedTheme } from '@/types'
+import { OBJ_TEST_IDS } from '@/constants'
 
 const { LIGHT, DARK } = MuiSelectedTheme
 

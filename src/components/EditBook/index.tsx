@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Typography, DialogContent, DialogTitle, lighten } from '@mui/material'
-import { useBookDetails } from '../../hooks'
+
+import { useBookDetails } from '@/hooks'
 import EditBookForm from './components/EditBookForm'
 
 type Props = {

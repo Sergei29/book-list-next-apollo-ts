@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
 import MuiTextField, { TextFieldProps } from '@mui/material/TextField'
 import { FormHelperText } from '@mui/material'
-import { ValidationType } from '../../../types'
+
+import { ValidationType } from '@/types'
 
 type Props = {
   handleChange: (strFieldName: string, strValue: string) => void

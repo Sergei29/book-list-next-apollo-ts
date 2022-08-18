@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useQuery, useMutation } from '@apollo/client'
-import { GET_BOOKS, GET_BOOK_DETAILS, ADD_BOOK } from '../../apollo'
+
+import { ValidationType, NewBookFormStateType, Book } from '@/types'
+import { GET_BOOKS, GET_BOOK_DETAILS, ADD_BOOK } from '@/apollo'
+import { objAuthContext } from '@/containers/AuthProvider'
+import { objInitialValidation } from '@/constants'
 import { validateAddBookForm } from '../helpers'
-import { objAuthContext } from '../../containers/AuthProvider'
-import { ValidationType, NewBookFormStateType, Book } from '../../types'
-import { objInitialValidation } from '../../constants'
 
 export type FormValidationStateType = Readonly<
   Record<'name' | 'genre' | 'authorId' | 'description' | 'strBase64ImageFile', ValidationType>

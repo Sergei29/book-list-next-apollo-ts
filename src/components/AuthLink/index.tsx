@@ -1,7 +1,8 @@
 import React from 'react'
 import { IconButton, Tooltip, ListItem, ListItemIcon, ListItemText, useTheme, useMediaQuery } from '@mui/material'
 import { LockOpen as LockOpenIcon, Lock as LockIcon } from '@mui/icons-material'
-import { OBJ_TEST_IDS } from '../../constants'
+
+import { OBJ_TEST_IDS } from '@/constants'
 
 type Props = {
   bLoggedIn: boolean

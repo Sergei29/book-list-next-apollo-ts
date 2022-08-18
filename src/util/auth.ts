@@ -1,8 +1,9 @@
 import JWT from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
 import { Base64 } from 'js-base64'
-import { TokenPayloadType } from '../types'
-import { SECRET } from '../constants'
+
+import { TokenPayloadType } from '@/types'
+import { SECRET } from '@/constants'
 
 const base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/
 const isBase64Encoded = (strBase64Encoded: string) => base64regex.test(strBase64Encoded)

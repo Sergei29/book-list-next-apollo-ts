@@ -1,7 +1,8 @@
 import React from 'react'
-import BookForm from '../../../BookForm'
-import { useEditBookForm } from '../../../../hooks'
-import { Book } from '../../../../types'
+
+import BookForm from '@/components/BookForm'
+import { useEditBookForm } from '@/hooks'
+import { Book } from '@/types'
 
 type Props = {
   objSelectedBook: Book

@@ -1,4 +1,4 @@
-import { ObjValidationType } from "../../types";
+import { ObjValidationType } from '@/types'
 
 /**
  * @description generates initial validation state
@@ -6,5 +6,5 @@ import { ObjValidationType } from "../../types";
  */
 export const getIntitialValidation = (): Readonly<ObjValidationType> => ({
   bIsValid: true,
-  strErrorMessage: "",
-});
+  strErrorMessage: '',
+})

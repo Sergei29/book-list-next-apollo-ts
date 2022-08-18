@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
 import { useQuery } from '@apollo/client'
-import { currentThemeVar } from '../../apollo/reactiveVars'
-import { GET_CURRENT_THEME } from '../../apollo'
-import { MuiSelectedTheme } from '../../types'
+
+import { currentThemeVar } from '@/apollo/reactiveVars'
+import { GET_CURRENT_THEME } from '@/apollo'
+import { MuiSelectedTheme } from '@/types'
 
 const { LIGHT, DARK } = MuiSelectedTheme
 

@@ -1,9 +1,10 @@
 import { useEffect, useContext } from 'react'
 import { useRouter } from 'next/router'
 import { useMutation } from '@apollo/client'
-import { USER_INFO, SIGN_OUT } from '../../apollo'
-import { objAuthContext } from '../../containers/AuthProvider'
-import { UserType } from '../../types'
+
+import { objAuthContext } from '@/containers/AuthProvider'
+import { USER_INFO, SIGN_OUT } from '@/apollo'
+import { UserType } from '@/types'
 
 type UserInfoPayloadType = { userInfo: { user: UserType } }
 

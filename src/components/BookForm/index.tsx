@@ -7,11 +7,12 @@ import {
   CollectionsBookmark as CollectionsBookmarkIcon,
 } from '@mui/icons-material'
 import { InputAdornment, MenuItem, CardMedia, Typography, Box } from '@mui/material'
-import { GET_AUTHORS } from '../../apollo'
-import TextField from '../common/TextField'
-import FileInput from '../common/FileInput'
-import SubmitButton from '../common/SubmitButton'
-import { NewBookFormStateType, Author, FormValidationStateType } from '../../types'
+
+import { NewBookFormStateType, Author, FormValidationStateType } from '@/types'
+import SubmitButton from '@/components/common/SubmitButton'
+import TextField from '@/components/common/TextField'
+import FileInput from '@/components/common/FileInput'
+import { GET_AUTHORS } from '@/apollo'
 
 type Props = {
   bEditBook?: boolean

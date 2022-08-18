@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
-import { copyTextToClipboard } from '../../util'
+
+import { copyTextToClipboard } from '@/util'
 
 export const useCopytoClipboard = () => {
   const [strCopiedField, setStrCopiedField] = useState<string | null>(null)

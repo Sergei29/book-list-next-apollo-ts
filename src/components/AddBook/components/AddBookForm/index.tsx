@@ -1,6 +1,7 @@
 import React from 'react'
-import { useAddBookForm } from '../../../../hooks'
-import BookForm from '../../../BookForm'
+
+import BookForm from '@/components/BookForm'
+import { useAddBookForm } from '@/hooks'
 
 type Props = {
   nStrSelectedBookId: string | null

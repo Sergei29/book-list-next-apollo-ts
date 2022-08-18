@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Base64 } from 'js-base64'
 import { useMutation } from '@apollo/client'
-import { SIGN_UP } from '../../apollo'
-import { objAuthContext } from '../../containers/AuthProvider'
-import { UserType, ObjValidationType, SignUpFormStateType } from '../../types'
-import { getIntitialValidation } from '../helpers/getIntitialValidation'
-import { validateSignUpFormField, funcIsFormValid } from '../helpers/validateSignUpFields'
+
+import { validateSignUpFormField, funcIsFormValid } from '@/hooks/helpers/validateSignUpFields'
+import { getIntitialValidation } from '@/hooks/helpers/getIntitialValidation'
+import { UserType, ObjValidationType, SignUpFormStateType } from '@/types'
+import { objAuthContext } from '@/containers/AuthProvider'
+import { SIGN_UP } from '@/apollo'
 
 type SignUpPayloadType = { signUp: { user: UserType } }
 type HookPropsType = {

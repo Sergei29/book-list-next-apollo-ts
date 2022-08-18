@@ -1,8 +1,8 @@
 import { useCallback } from 'react'
 import { useQuery, useMutation } from '@apollo/client'
 import { GET_ADMIN_AUTHORS, GET_BOOKS, REMOVE_AUTHOR, REMOVE_BOOK } from '../../apollo'
-import updateAuthorsBooks from '../helpers/updateAuthorsBooks'
-import { Author, Book } from '../../types'
+import updateAuthorsBooks from '@/hooks/helpers/updateAuthorsBooks'
+import { Author, Book } from '@/types'
 
 /**
  * @description custom hook for admin page logic

@@ -1,5 +1,5 @@
-import { ValidationType, NewBookFormStateType, Book } from '../../types'
-import { objInitialValidation } from '../../constants'
+import { ValidationType, NewBookFormStateType, Book } from '@/types'
+import { objInitialValidation } from '@/constants'
 
 export type FormValidationStateType = Readonly<
   Record<'name' | 'genre' | 'authorId' | 'description' | 'strBase64ImageFile', ValidationType>

@@ -1,19 +1,19 @@
 import React, { useState, useContext } from 'react'
 import type { NextPage, GetServerSideProps } from 'next'
 import { Typography, Box } from '@mui/material'
-import { apolloClient } from '../apollo'
-import { GET_BOOKS } from '../apollo'
-import { Book } from '../types'
-import PageContainer from '../containers/PageContainer'
-import { objAuthContext } from '../containers/AuthProvider'
-import { useBookListPage } from '../hooks'
-import { OBJ_TEST_IDS } from '../constants'
 
-import BookList from '../components/BookList'
-import BookDetails from '../components/BookDetails'
-import AddBook from '../components/AddBook'
-import Background from '../components/Background'
-import ChangeListLayoutButton from '../components/ChangeListLayoutButton'
+import { objAuthContext } from '@/containers/AuthProvider'
+import PageContainer from '@/containers/PageContainer'
+import { apolloClient, GET_BOOKS } from '@/apollo'
+import { OBJ_TEST_IDS } from '@/constants'
+import { useBookListPage } from '@/hooks'
+import { Book } from '@/types'
+
+import ChangeListLayoutButton from '@/components/ChangeListLayoutButton'
+import BookDetails from '@/components/BookDetails'
+import Background from '@/components/Background'
+import BookList from '@/components/BookList'
+import AddBook from '@/components/AddBook'
 
 type Props = {
   data: { books?: Book[] }

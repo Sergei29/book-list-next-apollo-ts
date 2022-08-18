@@ -1,4 +1,4 @@
-import { Author } from '../../types'
+import { Author } from '@/types'
 
 /**
  * @description util function, updates authors list by removing book from selected author book list
