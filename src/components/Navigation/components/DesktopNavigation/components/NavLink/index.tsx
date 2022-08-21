@@ -18,6 +18,7 @@ const NavLink = ({ children, ...restLinkProps }: Props) => {
           color: (theme) => theme.palette.primary.main,
           textDecoration: 'none',
           textDecorationLine: bActiveLink ? 'underline' : 'none',
+          cursor: bActiveLink ? 'default' : 'pointer',
         }}
       >
         {children}
