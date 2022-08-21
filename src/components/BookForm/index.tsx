@@ -73,7 +73,7 @@ const BookForm: React.FC<Props> = ({
           },
           display: 'flex',
           flexDirection: 'column',
-          rowGap: (theme) => `${theme.spacing(2)}px`,
+          rowGap: (theme) => theme.spacing(2),
           minWidth: {
             xs: 200,
             sm: 320,
@@ -102,7 +102,7 @@ const BookForm: React.FC<Props> = ({
         },
         display: 'flex',
         flexDirection: 'column',
-        rowGap: (theme) => `${theme.spacing(2)}px`,
+        rowGap: (theme) => theme.spacing(2),
         minWidth: {
           xs: 200,
           sm: 320,
@@ -126,11 +126,11 @@ const BookForm: React.FC<Props> = ({
             xs: 'column',
             sm: 'row',
           },
-          columnGap: (theme) => `${theme.spacing(2)}px`,
+          columnGap: (theme) => theme.spacing(2),
           '& > div': {
             display: 'flex',
             flexDirection: 'column',
-            rowGap: (theme) => `${theme.spacing(2)}px`,
+            rowGap: (theme) => theme.spacing(2),
             maxWidth: 240,
           },
         }}
@@ -216,7 +216,7 @@ const BookForm: React.FC<Props> = ({
             handleChange={handleChangeImage}
             sx={{
               display: 'flex',
-              padding: (theme) => `${theme.spacing(2)}px ${theme.spacing(6)}px`,
+              padding: (theme) => theme.spacing(2, 6),
             }}
           />
           {objNewBook.strBase64ImageFile && <CardMedia component="img" src={objNewBook.strBase64ImageFile} />}

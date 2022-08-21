@@ -19,7 +19,8 @@ const MobileNavLink = ({ children, ...restLinkProps }: Props) => {
         textDecoration: 'none',
         display: 'flex',
         alignItems: 'center',
-        padding: (theme) => `${theme.spacing(1)}px ${theme.spacing(2)}px`,
+
+        padding: (theme) => theme.spacing(1, 2),
         width: '100%',
         backgroundColor: (theme) => (bActiveLink ? theme.custom?.bookDetails?.background : 'auto'),
       }}

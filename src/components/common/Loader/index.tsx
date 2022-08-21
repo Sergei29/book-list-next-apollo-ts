@@ -10,7 +10,7 @@ const Loader: React.FC<Props> = ({ strLoadingMessage }) => (
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      columnGap: (theme) => `${theme.spacing(2)}px`,
+      columnGap: (theme) => theme.spacing(2),
       '& > p': {
         color: (theme) => theme.palette.secondary.main,
       },

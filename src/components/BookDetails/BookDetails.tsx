@@ -47,21 +47,25 @@ const BookDetails: React.FC<Props> = ({ strBookId, setBShowEditModal, handleBook
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          rowGap: (theme) => `${theme.spacing(2)}px`,
-          '& > h5': {
-            fontSize: '1.5rem',
-          },
-          '& > div': {
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: (theme) => `${theme.spacing(1)}px`,
-          },
+          rowGap: (theme) => theme.spacing(2),
         }}
       >
-        <Typography variant="h4" component="h5">
+        <Typography
+          variant="h4"
+          component="h5"
+          sx={{
+            fontSize: '1.5rem',
+          }}
+        >
           All books by this author:
         </Typography>
-        <Box>
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: (theme) => theme.spacing(1),
+          }}
+        >
           {author!.books!.map((objBook: Record<string, any>) => (
             <Chip
               key={objBook!.id}

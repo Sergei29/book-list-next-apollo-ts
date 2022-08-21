@@ -16,7 +16,7 @@ const BookDetailsMain: React.FC<Props> = ({
   <Box
     sx={{
       display: 'flex',
-      gap: (theme) => `${theme.spacing(2)}px`,
+      gap: (theme) => theme.spacing(2),
       minHeight: 170,
     }}
     {...restBoxProps}

@@ -49,12 +49,12 @@ const GitHubButton: React.FC<Props> = ({ bLightTheme }) => {
           animation: `$shake 0.5s`,
         },
         textDecoration: 'none',
-        padding: (theme) => `${theme.spacing(0.5)} ${theme.spacing(1)}`,
+        padding: (theme) => theme.spacing(0.5, 1),
         color: (theme) => (bLightTheme ? theme.palette.common.white : theme.palette.secondary.main),
         display: 'flex',
         borderRadius: 4,
         backgroundColor: (theme) => theme.palette.primary.main,
-        columnGap: (theme) => `${theme.spacing(1)}`,
+        columnGap: (theme) => theme.spacing(1),
         transition: (theme) => `all 200ms ${theme.transitions.easing.easeInOut}`,
       }}
     >
