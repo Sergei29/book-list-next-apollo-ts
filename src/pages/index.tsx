@@ -23,18 +23,20 @@ export const getStaticProps: GetStaticProps = async (_ctx) => {
   return {
     props: {
       arrBooks: data.books,
+      nStrInitialId: data.books ? data.books[0].id : null,
     },
   }
 }
 
 type PageProps = {
   arrBooks?: Book[]
+  nStrInitialId: string | null
 }
 
-const Home: NextPage<PageProps> = ({ arrBooks }) => {
+const Home: NextPage<PageProps> = ({ arrBooks, nStrInitialId }) => {
   const [bDisplayCloud, setbDisplayCloud] = useState<boolean>(false)
   const { getIsAuthenticated } = useContext(objAuthContext)
-  const { nStrSelectedBookId, handleBookSelect, handleBookDeselect } = useBookListPage()
+  const { nStrSelectedBookId, handleBookSelect, handleBookDeselect } = useBookListPage({ nStrInitialId })
 
   const funcToggleLayout = () => setbDisplayCloud((bPrevState) => !bPrevState)
   return (

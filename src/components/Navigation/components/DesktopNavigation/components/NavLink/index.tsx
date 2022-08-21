@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from '@mui/material'
+import { Box, Link as MuiLink } from '@mui/material'
 import Link, { LinkProps } from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -12,16 +12,16 @@ const NavLink = ({ children, ...restLinkProps }: Props) => {
   const bActiveLink = router.asPath === restLinkProps.href
 
   return (
-    <Box
-      component={Link}
-      sx={{
-        color: (theme) => theme.palette.primary.main,
-        textDecoration: 'none',
-        textDecorationLine: bActiveLink ? 'underline' : 'none',
-      }}
-      {...restLinkProps}
-    >
-      {children}
+    <Box component={Link} {...restLinkProps}>
+      <MuiLink
+        sx={{
+          color: (theme) => theme.palette.primary.main,
+          textDecoration: 'none',
+          textDecorationLine: bActiveLink ? 'underline' : 'none',
+        }}
+      >
+        {children}
+      </MuiLink>
     </Box>
   )
 }

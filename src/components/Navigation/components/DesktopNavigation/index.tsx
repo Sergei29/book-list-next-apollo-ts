@@ -4,10 +4,11 @@ import { Tooltip, Box } from '@mui/material'
 import GitHubButton from '@/components/GitHubButton'
 import Switch from '@/components/common/Switch'
 import AuthLink from '@/components/AuthLink'
-import NavListItem from './components/NavListItem'
-import NavLink from './components/NavLink'
 import { MuiSelectedTheme } from '@/types'
 import { OBJ_TEST_IDS } from '@/constants'
+
+import NavListItem from './components/NavListItem'
+import NavLink from './components/NavLink'
 
 const { LIGHT, DARK } = MuiSelectedTheme
 
@@ -40,6 +41,7 @@ const DesktopNavigation: React.FC<Props> = ({
       sx={{
         position: 'relative',
         zIndex: 2,
+        px: 2,
       }}
     >
       <Box
