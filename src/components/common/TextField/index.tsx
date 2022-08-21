@@ -58,6 +58,7 @@ const TextField: React.FC<Props> = ({
     <Fragment>
       <MuiTextField
         sx={{
+          overflow: 'hidden',
           paddingRight: (theme) => theme.spacing(0.5),
           boxSizing: 'border-box',
           borderRadius: 4,

@@ -32,8 +32,12 @@ const AuthModal: React.FC<Props> = ({ bOpen, children, handleClose }) => {
         alignItems: 'center',
         justifyContent: 'center',
         padding: (theme) => theme.spacing(2),
-        backgroundColor: 'rgba(0, 0, 0, 0.7)',
         minWidth: '40%',
+      }}
+      PaperProps={{
+        sx: {
+          backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        },
       }}
     >
       <Fade in={bOpen}>
